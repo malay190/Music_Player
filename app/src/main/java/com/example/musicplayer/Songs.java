@@ -8,6 +8,8 @@ public class Songs {
     private String songArtist;
     private Uri songUri;
 
+
+
     public Songs(String songTitle, String songArtist, Uri songUri) {
         this.songTitle = songTitle;
         this.songArtist = songArtist;

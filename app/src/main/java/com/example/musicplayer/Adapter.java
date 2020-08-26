@@ -1,5 +1,6 @@
 package com.example.musicplayer;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ListHolder> {
     private  List<Songs> songsList;
+    private static final String TAG = "Adapter";
 
     public Adapter(List<Songs> songsList) {
         this.songsList = songsList;
@@ -28,15 +29,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ListHolder holder, int position) {
+        Songs currentSongs = songsList.get(position);
 
-        holder.songTile.setText(songsList.get(position).getSongTitle());
-        holder.songArtist.setText(songsList.get(position).getSongArtist());
+        holder.songTile.setText(currentSongs.getSongTitle());
+        holder.songArtist.setText(currentSongs.getSongArtist());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        Log.d(TAG, "getItemCount: "+ songsList.size());
+        return songsList.size();
     }
 
     public class ListHolder extends RecyclerView.ViewHolder{

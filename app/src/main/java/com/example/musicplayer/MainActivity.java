@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         }
         mediaPlayer.start();
         Intent intent = new Intent(this,NotificationServices.class);
-        ContextCompat.startForegroundService(this,intent);
+        this.startService(intent);
 
     }
 
@@ -143,9 +143,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         mediaPlayer.stop();
-
-        Intent intent = new Intent(this,NotificationServices.class);
-        stopService(intent);
 
     }
 }

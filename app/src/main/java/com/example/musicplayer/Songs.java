@@ -8,6 +8,9 @@ public class Songs {
     private String songArtist;
     private Uri songUri;
 
+    public Songs(){
+
+    }
 
 
     public Songs(String songTitle, String songArtist, Uri songUri) {

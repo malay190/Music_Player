@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ListHolder> {
+public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ListHolder> {
     private  List<Songs> songsList;
     private static final String TAG = "Adapter";
 
-    public Adapter(List<Songs> songsList) {
+    public SongAdapter(List<Songs> songsList) {
         this.songsList = songsList;
     }
 
@@ -33,6 +33,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListHolder> {
 
         holder.songTile.setText(currentSongs.getSongTitle());
         holder.songArtist.setText(currentSongs.getSongArtist());
+        holder.showImage.setImageDrawable(null);
 
     }
 
